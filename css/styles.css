@@ -140,6 +140,7 @@ img {
 
 .contacts-header {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 .contacts-header > .item:not(:last-child) {
@@ -155,6 +156,14 @@ img {
   letter-spacing: 0.02em;
 
   text-decoration: none;
+}
+.contacts-header-link::before {
+  display: block;
+  content: '';
+  margin-right: 10px;
+  height: 16px;
+  background-image: url('../images/svg/envelope-hover.svg');
+  background-repeat: no-repeat;
 }
 .contacts-footer,
 .contacts-footer:visited {
@@ -186,8 +195,18 @@ img {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 
-  background-color: var(--dark-background-color);
+  background-color: #c4c4c4;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   text-align: center;
 }
 .hero-title {
@@ -229,6 +248,20 @@ img {
 }
 .features-card {
   flex-basis: calc((100% - (var(--cards-gap) * 3)) / 4);
+}
+.features-card::before {
+  content: '';
+  display: block;
+  height: 120px;
+  margin-bottom: 30px;
+
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
+.icon-antenna::before {
+  background-image: url('../images/svg/antenna.svg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .features-card:not(:last-child) {
   margin-right: var(--cards-gap);
@@ -272,7 +305,8 @@ img {
 
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .team-card:not(:last-child) {
   margin-right: var(--cards-gap);
@@ -280,6 +314,8 @@ img {
 .team-card-content {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .team-member-title {
   margin-bottom: 10px;
@@ -291,9 +327,62 @@ img {
   text-align: center;
 }
 .team-text {
+  margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+}
+.social-links-list {
+  display: flex;
+  align-items: center;
+}
+.social-links-list > .item:not(:last-child) {
+  margin-right: 10px;
+}
+.socila-links {
+  display: block;
+
+  height: 44px;
+  width: 44px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.instagram {
+  background-image: url('../images/svg/instagram.svg');
+}
+.twitter {
+  background-image: url('../images/svg/twitter.svg');
+}
+.facebook {
+  background-image: url('../images/svg/facebook.svg');
+}
+.linkedin {
+  background-image: url('../images/svg/linkedin.svg');
+}
+
+.instagram:hover,
+.twitter:hover,
+.facebook:hover,
+.linkedin:hover {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* clients section */
+
+.clients {
+  display: flex;
+  align-items: center;
+}
+.clients > .item {
+  flex-basis: calc(100% - (5 * var(--cards-gap)) / 6);
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.clients > .item:not(:last-child) {
+  margin-right: var(--cards-gap);
 }
 
 /* filter buttons */
